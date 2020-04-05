@@ -1,0 +1,99 @@
+.TasksListItem {
+  z-index: 0;
+  position: relative;
+  display: flex;
+  color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 12px;
+  input {
+    display: none;
+  }
+  span {
+    display: flex;
+    align-items: center;
+    width: min-content;
+    position: relative;
+    margin-right: 11px;
+    &::before {
+      content: "";
+      display: inline-block;
+      box-sizing: border-box;
+      background-color: #F2F2F2;
+      border-radius: 2px;
+      width: 18px;
+      height: 18px;
+      vertical-align: top;
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 5px;
+      border: solid 2px transparent;
+      border-right: none;
+      border-top: none;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+  &__name {
+    max-width: 280px;
+    word-break: break-all;
+    cursor: pointer;
+    color: #8A93A9;
+  }
+}
+
+/* Checked, Indeterminate */
+
+.TasksListItem > input:checked + .TasksListItem__name, .TasksListItem > input:indeterminate + .TasksListItem__name {
+  color: #9BA5BC;
+}
+
+.TasksListItem > input:checked + span::before,
+.TasksListItem > input:indeterminate + span::before {
+  border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+  background-color: #82D5FB;
+}
+
+.TasksListItem > input:checked + span::after,
+.TasksListItem > input:indeterminate + span::after {
+  border-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+}
+
+.TasksListItem > input:indeterminate + span::after {
+  border-left: none;
+  transform: translate(4px, 3px);
+}
+
+/* Active */
+
+.TasksListItem > input:active + span::before {
+  border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+.TasksListItem > input:checked:active + span::before {
+  border-color: transparent;
+  background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+}
+
+/* Disabled */
+
+.TasksListItem > input:disabled + span {
+  color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+  cursor: initial;
+}
+
+.TasksListItem > input:disabled + span::before {
+  border-color: currentColor;
+}
+
+.TasksListItem > input:checked:disabled + span::before,
+.TasksListItem > input:indeterminate:disabled + span::before {
+  border-color: transparent;
+  background-color: currentColor;
+}

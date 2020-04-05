@@ -1,0 +1,26 @@
+.calendar {
+  display: grid;
+  grid-template-rows: max-content max-content 1fr;
+  grid-template-columns: 1fr;
+  color: #697597;
+  &__weeks {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(7, 1fr);
+    column-gap: 8px;
+    color: #B1B9C1;
+    &__item {
+      padding: 12px;
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    column-gap: 8px;
+    &_week {
+      &_4 {grid-template-rows: repeat(4, 1fr);}
+      &_5 {grid-template-rows: repeat(5, 1fr);}
+      &_6 {grid-template-rows: repeat(6, 1fr);}
+    }
+  }
+}

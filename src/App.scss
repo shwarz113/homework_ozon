@@ -1,0 +1,26 @@
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 7%;
+}
+
+.box {
+  width: 350px;
+  margin: 0 20px;
+  padding: 20px;
+  padding-bottom: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 30px 8px #F7F7F7;
+  font-size: 16px;
+
+  .title {
+    text-align: left;
+    margin-bottom: 15px;
+    padding-left: 12px;
+  }
+}

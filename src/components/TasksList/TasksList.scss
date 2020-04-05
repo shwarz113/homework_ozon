@@ -1,0 +1,23 @@
+.tasksList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 289px;
+  color: #8A93A9;
+  &__input {
+    margin-left: 12px;
+    padding: 12px;
+    border: 2px solid #DADFE8;
+    border-radius: 5px;
+    font-size: 15px;
+    &_margin {
+      margin-left: 42px;
+    }
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: #BABFC8;
+    }
+  }
+}
