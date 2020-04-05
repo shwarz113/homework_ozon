@@ -10,6 +10,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f git@github.com:shwarz113/homework_ozon.git master:pages
+git push -f git@github.com:shwarz113/homework_ozon.git master:gh-pages
 
 cd -
