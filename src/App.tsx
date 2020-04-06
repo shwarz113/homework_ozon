@@ -1,6 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { MyStore } from '@/store/store';
-import {Mutation, useStore} from "vuex-simple";
+import {useStore} from "vuex-simple";
 import {store} from "@/store/index";
 import Calendar from './components/Calendar/Calendar';
 import TasksList from './components/TasksList/TasksList';
@@ -41,14 +41,6 @@ export default class App extends Vue {
     this.store.planner.setDate(new Date())
   }
 
-  // checkBrowser
-  public checkBrowser() {
-    const sUsrAg = navigator.userAgent;
-    const browsers = [ 'Firefox', 'OPR', 'Trident', 'Edge', 'YaBrowser', 'Chrome', 'Safari'];  // порядок важен
-    const sBrowser = browsers.find( (el:any) => sUsrAg.indexOf(el) > -1);
-    return sBrowser === "Chrome";
-  };
-
   render() {
     return (
       <div id="app">
@@ -58,7 +50,6 @@ export default class App extends Vue {
           allDays={this.getAllDays}
           focusedDay={this.getFocusedDay}
           selectDay={this.selectDay}
-          isChrome={this.checkBrowser()}
         />
         <TasksList
           focusedDay={this.getFocusedDay}

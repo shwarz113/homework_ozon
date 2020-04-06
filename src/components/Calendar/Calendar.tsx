@@ -10,8 +10,7 @@ interface Props {
   weekNames: Array<string>
   allDays: Array<IDay>
   focusedDay: IDay,
-  selectDay: Function,
-  isChrome: boolean
+  selectDay: Function
 }
 
 @Component
@@ -22,14 +21,13 @@ export default class Calendar extends VueComponent<Props> {
   @Prop() private allDays!: Array<IDay>;
   @Prop() private focusedDay!: IDay;
   @Prop() private selectDay!: Function;
-  @Prop() private isChrome!: boolean;
 
   render() {
     const {title, weekNames, allDays} = this;
 
     return (
       allDays && allDays.length ?
-        <div class={`box ${styles.calendar} ${this.isChrome ? '' : styles.calendar_noChrome}`}>
+        <div class={`box ${styles.calendar}`}>
           <div class={'title'}>{title}</div>
           <div class={styles.calendar__weeks}>
             {
@@ -46,7 +44,6 @@ export default class Calendar extends VueComponent<Props> {
                   focusedDay={this.focusedDay}
                   day={el}
                   selectDay={this.selectDay}
-                  isChrome={this.isChrome}
                 />
               ) )
             }
