@@ -7,7 +7,8 @@ import styles from './CalendarItem.scss?module';
 interface Props {
   day: IDay,
   focusedDay: IDay,
-  selectDay: Function
+  selectDay: Function,
+  isChrome: boolean
 }
 @Component
 export default class CalendarItem extends VueComponent<Props> {
@@ -15,6 +16,7 @@ export default class CalendarItem extends VueComponent<Props> {
   @Prop() private day!: IDay;
   @Prop() private focusedDay!: IDay;
   @Prop() private selectDay!: Function;
+  @Prop() private isChrome!: boolean;
 
   public checkAndSelectDay() {
     if(this.day && this.day.id) {
@@ -35,6 +37,7 @@ export default class CalendarItem extends VueComponent<Props> {
             ${isToday ? styles.calendar__list__item_today : ''}
             ${id === focusedDay.id ? styles.calendar__list__item_focused: ''}
             ${id ? '' : styles.calendar__list__item_noBehavior}
+            ${this.isChrome ? '' : styles.calendar__list__item_noChrome}
           `}
           onclick={this.checkAndSelectDay}
         >

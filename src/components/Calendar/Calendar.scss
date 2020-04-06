@@ -24,3 +24,24 @@
     }
   }
 }
+
+.calendar_noChrome {
+  display: flex;
+  flex-direction: column;
+  color: #697597;
+  .calendar__weeks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #B1B9C1;
+    &__item {
+      padding: 12px;
+    }
+  }
+  .calendar__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}

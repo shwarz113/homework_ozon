@@ -24,3 +24,13 @@
     padding-left: 12px;
   }
 }
+
+
+@media screen and (max-width: 1024px) {
+  #app {
+    flex-wrap: wrap;
+    .box {
+      margin: 10px;
+    }
+  }
+}

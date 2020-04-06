@@ -32,3 +32,16 @@
     }
   }
 }
+
+.calendar__list__item_noChrome {
+  box-sizing: border-box;
+  width: 50px;
+  height: 48px;
+}
+
+@media screen and (max-width: 415px) {
+  .calendar__list__item_noChrome {
+    width: 43px;
+    height: 43px;
+  }
+}
